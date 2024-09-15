@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ایلان ماسک</title>
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+
+        @font-face {
+    font-family: vazir;
+    src: url(vazir-font-v16.1.0/Vazir-FD-WOL.woff) format('woff');
+    font-weight: 100;
+}
+        
+        body{
+            font-family: vazir;
+            font-size: 16px;
+            font-family: 'vazir', Arial, sans-serif;
+            font-weight:normal;
+        }
+
+        .row-9{
+            display: flex;
+        }
+        .col-1{
+            flex: 20%;
+        }
+        .col-2{
+            flex: 20%;
+        }
+        .col-2{
+            flex: 20%;
+        }
+        .col-3{
+            flex: 20%;
+        }
+        .col-4{
+            flex: 20%;
+        }
+        .col-5{
+            flex: 20%;
+        }
+        a{
+            text-decoration: none;
+            color: #17a2b8;
+        }
+        .row-9{
+            text-align: center;
+            margin-top: 0px;
+            width: 100%;
+            background-color: #f8f9fa;
+        }
+        .row-3{
+            display: flex;
+        }
+        .col-9{
+            margin-right: 12px;
+        }
+        @media screen and (max-width: 800px){
+            .row-3{
+                flex-direction: column;
+            }
+            .col-8{
+                text-align: center;
+            }
+        }
+        .accordion {
+
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+        }
+
+        .row-4{
+            display: flex;
+        }
+        @media screen and (max-width: 800px){
+            .row-4{
+                flex-direction: column;
+            }
+            .col-10{
+                text-align: center;
+            }
+        }
+        .row-5{
+            display: flex;
+        }
+        @media screen and (max-width: 800px){
+            .row-5{
+                flex-direction: column;
+            }
+            .col-12{
+                text-align: center;
+            }
+        }
+        .row-6{
+            display: flex;
+        }
+        @media screen and (max-width: 800px){
+            .row-6{
+                flex-direction: column;
+            }
+            .col-14{
+                text-align: center;
+            }
+        }
+        .row-7{
+            display: flex;
+        }
+        @media screen and (max-width: 800px){
+            .row-7{
+                flex-direction: column;
+            }
+            .col-16{
+                text-align: center;
+            }
+        }
+        .row-8{
+            display: flex;
+        }
+        @media screen and (max-width: 800px){
+            .row-8{
+                flex-direction: column;
+            }
+            .col-18{
+                text-align: center;
+            }
+            body{
+                overflow-x: hidden;
+            }
+        }
+        ul, #myUL {
+            list-style-type: none;
+        }
+
+        #myDIV {
+            width: 100%;
+            padding: 50px 0;
+            margin-top: -50px;
+        }
+
+
+        .row > .column {
+            padding: 0 8px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .column {
+            float: left;
+            width: 25%;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: black;
+        }
+
+        /* Modal Content */
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        /* The Close Button */
+        .close {
+            color: white;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #999;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .cursor {
+            cursor: pointer;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        img {
+            margin-bottom: -4px;
+        }
+
+        .caption-container {
+            text-align: center;
+            background-color: black;
+            padding: 2px 16px;
+            color: white;
+        }
+
+        .demo {
+            opacity: 0.6;
+        }
+
+        .active,
+        .demo:hover {
+            opacity: 1;
+        }
+
+        img.hover-shadow {
+            transition: 0.3s;
+        }
+
+        .hover-shadow:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        /*for tesla*/
+        * {
+            box-sizing: border-box;
+        }
+
+        .row > .column {
+            padding: 0 8px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .row-10 > .column {
+            padding: 0 8px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body dir="rtl">
+  <div class="row-9" dir="rtl" style="position: fixed;margin-top: -8px">
+    <div class="col-2" style="font-size: 19px">
+        <a href="#children">کودکی ایلان ماسک</a>
+    </div>
+    <div class="col-3" style="font-size: 19px">
+        <a href="#space x">SPACE X</a>
+    </div>
+    <div class="col-4" style="font-size: 19px">
+        <a href="#tesla">TESLA</a>
+    </div>
+    <div class="col-4" style="font-size: 19px">
+        <a href="#paypal">PAYPAL</a>
+    </div>
+    <div class="col-5" style="font-size: 19px">
+        <a href="#live mask"> زندگی ایلان ماسک</a>
+    </div>
+  </div>
+  <div class="row-2" style="flex-direction: column;text-align: center" id="home">
+      <div class="col-6">
+          <img src="image/1.jpg" style="width: 300px;height: 200px;border-radius: 50px;margin-top: 100px">
+      </div>
+      <div class="col-7">
+          <strong>ایلان ماسک</strong>
+      </div>
+  </div>
+  <br><br><br><br><div id="children" ></div><br>
+  <div class="row-3" style="margin-top: 5%;">
+      <div class="col-8">
+          <img src="image/2.jpg" style="width: 300px;height: 250px;border-radius: 14px;">
+      </div>
+      <div class="col-9">
+          <p>ایلان ماسک در 28 ژوئن 1971 در پرتوریا ، آفریقای جنوبی به دنیا آمد .</p>
+          <p>ماسک دوران کودکی اش را به سختی سپری کرد . پدر و مادرش در ده سالگی طلاق گرفتند و او ترجیح داد با پدرش زندگی کند . ایلان ماسک جوان اغلب از پدرش دور بود .</p>
+          <p>ایلان یک خواهر و یک برادر دارد .</p>
+          <p>خواهر او توسکا ماسک که خواهر کوچکتر ایلان است ، صفحه اختصاصی او در وب‌سایت IMDB ثبت شده، تا کنون در ساخت بیش از ۴۰ فیلم مشارکت داشته است .</p>
+          <p>کیمبال ماسک ، برادر ایلان ، به عنوان بنیان‌گذار سه شرکت غذایی Big Green ، The Kitchen Restaurant Group و Square Roots شناخته می‌شود .</p>
+      </div>
+  </div>
+   <a href="#home" style="color: black; position: fixed;left: 30px;bottom: 30px">
+    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+    </svg>
+   </a>
+
+  <br><br><div id="space x"></div><br>
+  <div class="row-4"  style="margin-top: 5%;">
+      <div class="col-10">
+          <img src="image/Iridium-4_Mission_(25557986177).jpg" style="width: 300px;height: 250px;border-radius: 14px;">
+      </div>
+      <div class="col-11" style="margin-right: 12px">
+          <a href="https://www.spacex.com" target="_blank" style="font-size: 20px">SPACE X</a>
+          <p>ایلان ماسک بنیان گذار شرکت های تسلا موتورز و پی پال درسال 2002 شرکت اسپیس ایکس (space x) را تاسیس کرد .</p>
+          <p>اسپیس ایکس (space x) یک شرکت آمریکایی تولیدکنندهٔ محصولات صنایع هوافضایی که ارائه‌دهنده خدمات اکتشاف فضایی و مخابراتی است در کالیفرنیا آمریکا شکل گرفته است .</p>
+          <p>در 30 مهٔ 2020 فضاپیمای کرو دراگون دمو 2 به فضا پرتاب شد و دو فضانورد سازمان هوافضای آمریکا (ناسا) با یک فضاپیمای خصوصی راهی مدار زمین شدند .</p>
+          <p>درسال 2008 ، اسپیس‌اکس (space x) سرمایه ۲۰ میلیون دلاری از طرف «فاندرس فاند» را قبول کرد .</p>
+          <p>فضاپیماهای فالکون 1 و فالکون 9 و دراگن :</p>
+          <button class="accordion" style="width: 100%">فالکون 1</button>
+          <div class="panel">
+              <p>یک موشک کوچک با توانایی قرار دادن چندصد کیلوگرم در مدار نزدیک زمین بود . فالکون 1 ، 5 پرواز در طی 2004-2009 انجام داد. در 28 سپتامبر 2008 ، فالکون 1 پس از چهارمین تلاش، موفق به رسیدن به مدار شد و تبدیل به نخستین موشک با سرمایه خصوصی و سوخت مایع شد که قادر به انجام این کار شده بود . فالکون 1 در 13 ژوئیه 2009، در پنجمین پروازش موفق به حمل موفقیت‌آمیز نخستین محموله تجاری خود، ماهواره مالزیایی و قرار دادن آن در مدار شد .</p>
+          </div>
+
+          <button class="accordion">فالکون 9</button>
+          <div class="panel">
+              <p>در به تحویل 10٬450 کیلوگرم (23٬000 پوند) به مدار است، و برای رقابت با موشک‌های دلتا 4 و اتلس 5 در نظر گرفته شده‌است. این موشک برای مرحله اول نه موتور مرلین دارد .
+
+                  در ژوئن 2010 ، موشک فالکون 9 در نخستین تلاشش موفق به رسیدن به مدار شد .</p>
+          </div>
+
+          <button class="accordion">دراگن</button>
+          <div class="panel">
+              <p>در سال 2005 ، اسپیس‌اکس اعلام کرد که به دنبال یک برنامه فضایی مربوط به انسان تا پایان دهه است . فضاپیمای دراگن برای حمل 7 فضانورد به مدار و فراتر از آن در نظر گرفته شده‌است . در سال 2014 فضاپیماهای پشتیبانی گونه «اژدها» (Dragon) به سوی ایستگاه فضایی بین‌المللی (iss) پرتاب شدند .</p>
+          </div>
+
+          <script>
+              var acc = document.getElementsByClassName("accordion");
+              var i;
+
+              for (i = 0; i < acc.length; i++) {
+                  acc[i].addEventListener("click", function() {
+                      this.classList.toggle("active");
+                      var panel = this.nextElementSibling;
+                      if (panel.style.display === "block") {
+                          panel.style.display = "none";
+                      } else {
+                          panel.style.display = "block";
+                      }
+                  });
+              }
+
+          </script>
+
+      </div>
+  </div>
+
+  <br><br><div id="tesla"></div><br>
+  <div class="row-6"  style="margin-top: 5%;">
+      <div class="col-14">
+          <img src="image/images (1).jpg" style="width: 300px;height: 250px;border-radius: 14px;">
+      </div>
+      <div class="col-15" style="margin-right: 12px">
+          <a href="https://www.tesla.com" style="font-size: 20px;" target="_blank">TESLA</a>
+          <p>تسلا موتورز درسال 2003 به عنوان خودرویی با سوخت پاک توسط ایلان ریو ماسک بنا شد .</p>
+          <p>تسلا موتورز غیراز سوخت پاک امکانات جدیدی را هم در اختیار مشتریانش قرار داد امکاناتی نظیر رانندگی خوکار (auto drive) که طبق ادعایش باعث کاهش تصادف میشود .</p>
+          <p>نخستین تولید تسلا ، خودروی تمام‌برقی تسلا رودستر است . این خودرو نخستین خودرویی است که از باتری یون لیتیمی در بازه بیشتر از 320 کیلومتر (200 مایل) برای هر شارژ استفاده هیکند .</p>
+          <p>داستان شرکت تسلا در حقیقت به دهه 1990 و گروهی از مهندسان جوان بازمی‌گردد . در این میان دو نام کلیدی و دو بنیانگذار تسلا به‌شمار می‌روند .</p>
+          <p> یکی از نخستین تولیدات ایشان در زمینه کتاب‌خوان‌های الکترونیکی با تأسیس شرکت کوچکی به نام NuvoMedia در سال 1998 بود .</p>
+          <p>مدل های تسلا:1_رودستر  2_مدل اس  3_مدل ایکس  4_مدل3  5_مدل وای  6_سایبرتراک</p>
+      </div>
+  </div>
+
+
+  <br><br><div id="paypal"></div><br>
+  <div class="row-5" style="margin-top: 5%;" >
+      <div class="col-12">
+          <img src="image/3.jpg" style="width: 300px;height: 250px;border-radius: 14px;">
+      </div>
+      <div class="col-13" style="margin-right: 12px">
+          <a href="https://www.paypal.com" style="font-size: 20px;" target="_blank">PAYPAL</a>
+          <p>پی پال (Paypal) یک حساب بین المللی است که توسط یک شرکت آمریکایی در زمینه تجارت الکترونیکی برای نقل و انتقال وجه از طریق اینترنت به وجود آمد .</p>
+          <p>پی پال که یکی از بزرگترین شرکت‌های پرداخت الکترونیکی در دنیا است ، جایگزین روش‌های سنتی مانند پرداخت چک و حواله بانکی شده است .</p>
+          <p>خدمات حساب بین المللی پی پال شامل افتتاح حساب ، شارژ اکانت، فروش دلار و … توسط ایرانیکارت انجام می‌شود .</p>
+      </div>
+  </div>
+
+  <br><br><div id="live mask"></div><br>
+   <div class="row-7"  style="margin-top: 5%;">
+      <div class="col-16">
+          <img src="image/4.jpg" style="width: 300px;height: 250px;border-radius: 14px;">
+      </div>
+      <div class="col-17" style="margin-right: 12px">
+          <p>ایلان ریو ماسک که متولد جنوب افریقا است یک خواهر و یک برادر دارد و پدر و مادر او در سن 10سالگی ایلان طلاق گرفتند .
+              مادر کانادایی انگلیسی او به نام مِی ماسک متخصص رژیم غذایی و مدل بود.</p>
+          <p>او به دلیل طلاق والدین، قلدری در مدرسه ، و مشکل در درک نشانه‌ها و علایم ارتباط اجتماعی به دلیل نشانگان آسپرگر ، دوران کودکی دشواری را سپری کرد .</p>
+          <p>ارول ماسک پدر ایلان ماسک یک مهندس الکترومکانیک ، خلبان ، ملوان ، مشاور و توسعه دهنده املاک و مستغلات در آفریقای جنوبی است که زمانی یکی از مالکان معدن زمرد زامبیا در نزدیکی دریاچه تانگانیکا بود .</p>
+          <p> ایلان ماسک درحال حاضر مدیرعامل شرکت های اسپیس ایکس و تسلا و پی پال است .</p>
+          <p> ماسک با همسر اولش جاستین ماسک در حین تحصیل در دانشگاه کوئینز آشنا شد و در سال 2000 ازدواج کردند و صاحب یک دوقلو و یک سه قلو داشتند و فرزند اولشان که درسال 2002 براثر سندرم مرگ ناگهانی نوزاد در گذشت . این زوج درسال 2008 از یک دیگر جدا میشوند .</p>
+          <p>در سال 2008 ، ماسک با بازیگر انگلیسی تلولا رایلی و درسال 2010 بایکدیگر ازدواج کردند .</p>
+
+      </div>
+  </div>
+
+  <br><br>
+
+  <div class="row-8" style="margin-top: 5%;">
+      <div class="col-18">
+          <img src="image/5.jpg" style="width: 300px;height: 250px;border-radius: 14px">
+      </div>
+      <div class="col-19" style="margin-right: 12px">
+          <p>ایلان ماسک و تلولا رایلی درسال 2012 ایلان ماسک طلاق خود علنی کرد و درسال 2013 رایلی ماسک دوباره ازدواج کردند .</p>
+          <p>در دسامبر 2014 ، او برای دومین بار از رایلی درخواست طلاق داد اما اقدام پس گرفته شد . و طلاق دوم در سال 2016 علنی شد .</p>
+          <p>ماسک در سال 2017 برای چندین ماه با بازیگر آمریکایی امبر هرد وارد رابطه شد . گزارش شده که ایلان ماسک از سال 2012 به دنبالِ او بوده‌است .</p>
+          <p>در سال 2018 ، ماسک و خوانندهٔ کانادایی گرایمز اعلام کردند که با هم قرار می‌گذارند . گرایمز در مهٔ 2020 پسر خود را به دنیا آورد . به گفته ماسک و گرایمز، نام فرزندشان "X Æ A-12" بود .</p>
+          <p>به دلیل اینکه حروف این اسم در زبان اینگلیسی مدرن نبود ایالت کالفرنیا ان را نقض کرد و به "X Æ A-Xii" تغییر کرد .</p>
+          <p>چون Æ یک حرف در الفبای انگلیسی مدرن نیست این نام باعث سردرگمی شد و نام این کودک در نهایت "X AE A-XII" ماسک شد .</p>
+          <button onclick="myFunction()">ادامه ی مطلب ...</button>
+
+          <div id="myDIV">
+              <p>اولین شرکتی که ایلان ماسک تاسیس کرد به همراه برادرش تاسیس شد .</p>
+              <p>زیپ 2 یک نرم‌افزار «راهنمای سفر» آنلاین برای صنعت انتشارات روزنامه را توسعه و به بازار ارائه داد .</p>
+              <p> ماسک قرارداد هایی با نیویورک تایمز و شیکاگو تریبون بست و اعضای هیئت مدیره را برای ادغام با شرکتی به نام سیتی‌سرچ منصرف کرد .</p>
+
+
+          </div>
+          <script>
+              function myFunction() {
+                  var x = document.getElementById("myDIV");
+                  if (x.style.display === "none") {
+                      x.style.display = "block";
+                  } else {
+                      x.style.display = "none";
+                  }
+              }
+          </script>
+
+      </div>
+
+  </div>
+
+
+</body>
+</html>
